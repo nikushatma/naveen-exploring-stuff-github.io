@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>form page</title>
+    </head>
+    <body>
+        <h1 class="mb-10">Marks | Sheet</h1>
+        <div class="row">
+            <div class="col-12" >
+                <form method="post">
+                {%csrf_token%}
+                    <label>Subject 1</label>
+                    <input type="text" name="num1" class="form-control"/>
+                    <br>
+                    <br>
+                    <label>Subject 2</label>
+                    <input type="text" name="num2" class="form-control"/>
+                    <br>
+                    <br>
+                    <label>Subject 3</label>
+                    <input type="text" name="num3" class="form-control"/>
+                    <br>
+                    <br>
+                    <label>Subject 4</label>
+                    <input type="text" name="num4" class="form-control"/>
+                    <br>
+                    <br>
+                    <label>Subject 5</label>
+                    <input type="text" name="num5" class="form-control"/>
+                    <br>
+                    <br>
+                    <button type="submit">MarkSheet</button>
+                    <br>
+                    <br>
+                    <label>Total</label>
+                    <input type="text" value="{{total}}"/>
+                    <br>
+                    <br>
+                    <label>Percentage</label>
+                    <input type="text" value="{{percentage}}"/>
+                    <br>
+                    <br>
+                    <label>Divison</label>
+                    <input type="text" value="{{div}}"/>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

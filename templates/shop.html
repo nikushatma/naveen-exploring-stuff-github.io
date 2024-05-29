@@ -1,0 +1,65 @@
+{% extends "basic.html" %} {% block css %} .col-md-3 { display: inline-block;
+margin-left: -4px; } .carousel-indicators .active { background-colour: blue; }
+.col-md-3 img { width: 285px; height: 225px; } body .carousel-indicators li {
+background-color: blue; } body .carousel-indicators { bottom: 0; } .container {
+margin: 5px; padding: 5px; }
+body .no-padding { padding-left: 0; padding-right: 0; } 
+
+{% endblock %} 
+{% block body %} 
+{% load static %}
+<div class="container">
+    <div class="container carousel-inner no-padding">
+      <div class="carousel-item active">
+        {% for n in Addproducts %}
+        <div class="col-xs-3 col-sm-3 col-md-3 cards">
+          <div class="card align-item-center" style="width: 18rem">
+            <img src="{{n.image}}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{n.product_name}}</h5>
+              <p class="card-text">{{n.desc}}</p>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="/productview/{{n.id}}" class="btn btn-success">
+                Quik View</a
+              >
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+
+{% comment %} <script>
+
+  if (localStorage.getitem('cart')==null){
+    var cart ={};
+  }else {
+    cart = JSON.parse(localStorage.getitem('cart'));
+    document.getElementById('cart').innerHTML = Object.keys(cart).length;
+  }
+
+
+  $('.cart').click(function(){
+    var idstr = this.id.tostrong();
+    console.log(idstr);
+    if(cart[idstr] != undefined ){
+      cart[idstr] = cart[idstr] + 1;
+    } else {
+      cart[idstr] = 1;
+    }
+    localStorage.setitem('cart',JSON.stringify(cart));
+    document.getElementById('cart').innerHTML = Object.keys(cart).length;
+  });
+
+  $('#popcart').popover();
+  document.getElementById("popcart").setAttribute('data-content','<h5> cart for your items</h5>')
+
+  function updateCart(cart){
+    for(var item in cart){
+      document.getElementById('div' + k).innerHTML = "<button id ='minus" + k + "' class='btn btn-primary minus'> - </button> <span id ='val" +k + "'>" +cart[item] + " </span><>
+    }
+  }
+
+</script> {% endcomment %}
+{% endblock %}

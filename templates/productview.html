@@ -1,0 +1,29 @@
+{% extends "basic.html" %} 
+{% block title %} UttrakhandGroceryStore{% endblock %} 
+{% block body %}
+
+{% load static %}
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+            <img src="{{product.image}}" width="233px" height="385px"/>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <p><h2>{{product.category}}</h2></p>
+            <h5>{{product.product_name}}</h5>
+            <p><b>Rs. {{product.price}}</b></p>
+            <p>{{product.desc}}</p>
+
+            <div class="row">
+                <a href="#"><button type="button" class="btn btn-primary my-3">Add to Cart</button></a>
+                <a href="#"><button type="button" class="btn btn-success">Buy Now</button></a>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

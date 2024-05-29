@@ -1,0 +1,33 @@
+{% extends "basic.html" %}
+
+{% block title %} UttrakhandGroceryStore{% endblock title %}
+{% block body %}
+<div class="container my-3">
+    <h1> Contact Us</h1>
+    <br>
+    <form action="/contact/" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="num1" class="form-control" id="name" placeholder="Enter Your Name">
+        </div>
+        <br>
+        <div>
+            <label for="name">Email</label>
+            <input type="email" name="num1" class="form-control" id="email" placeholder="Enter Your Email">
+        </div>
+        <br>
+        <div>
+            <label for="name">Phone no.</label>
+            <input type="phone" name="num1" class="form-control" id="phone" placeholder="Enter Your Phone number">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="desc">How May We Help You ?</label>
+            <textarea class="form-control" id="desc" name="desc" rows="4"></textarea>
+        </div>
+        <br>
+        <button type="button" class="btn btn-success">Submit</button>
+    </form>
+</div>
+{% endblock %}

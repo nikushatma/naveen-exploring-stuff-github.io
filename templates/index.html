@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>{{title}}</title>
+        <style>
+            .main{
+                color: red;
+                font-size: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        {% for n in list %}
+       <div class="main">{{forloop.counter}} - {{n}}</div>
+       {% endfor %}
+        <br/>
+       <table border="2" cellpadding="14">
+            <tr>
+                <th>name</th>
+                <th>phoneno</th>
+            </tr>
+
+            {% for data in student_detail %}
+            <tr>
+                <td>{{data.name}}</td>
+                <td>{{data.phoneno}}</td>
+            </tr>
+            {% endfor %}
+            <br/>
+
+        {% if number|length > 0 %}
+
+            {% for no in number %}
+
+                {% if no > 40 %}
+                <div>{{no}}</div>
+                {% endif %}
+
+            {% endfor%}
+        {% else %}
+            <p>no data found</p>
+        {% endif %}
+        </table>
+    </body>
+</html>
